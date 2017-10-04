@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <section class="content">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>List of Players</h1>
+                <div class="panel panel-default">
+                    <input type="text" name="search" class="form-control" placeholder="Search" [(ngModel)]="searchData">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                        </div>
+                        <div *ngIf="criketerDetail.length <= 0" [ngStyle]="{'text-align': 'center','color': 'red'}">
+                            No Criketer Available
+                        </div>
+                        <div class="table-resposive" [hidden]="!criketerDetail.length > 0">
+                            <table class="table table-filter">
+                                <tbody>
+                                    <tr 
+                                     [@flyInOut]="in" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)"
+                                     *ngFor="let criketerList of ( criketerDetail | orderBy | searchBy : searchData ); let i = index"
+                                     [@crciketerState]= 'stateExpression'   (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
+                                        <td>
+                                            {{i + 1}}
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td [routerLink]="['/cricketerDetail', i + 1]" [queryParams]="{ page: 99 }" >
+                                            <div class="media"  >
+                                                <a href="#" class="pull-left">
+                                                    <img [src]="imageUrl" class="media-photo">
+                                                </a>
+                                                <h4 class="title">
+                                                    {{criketerList?.firstName | uCase}} {{criketerList?.lastName}} Born on {{criketerList?.dob | date :'shortDate' }}
+                                                </h4>
+                                                
+                                                <div class="media-body">
+                                                    <span class="media-meta pull-right">{{criketerList?.favShot}}</span>
+                                                    <!--1.2-4 Decimal value before the (.) and after and the digits to display-->
+                                                    <span class="media-meta pull-down">{{criketerList?.yearlyIncome  | currency : "INR" : false: "1.2-4"  }}</span>
+                                                    <p class="summary" appMyHighlighter>{{criketerList?.playerType}}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>

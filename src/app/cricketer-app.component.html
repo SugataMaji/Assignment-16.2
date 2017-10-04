@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/cricketer">Add a Cricketer</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/cricketersList">Cricketers List</a></li>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Router Outlet -->
+<router-outlet></router-outlet>

@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+caption,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto Condensed', 'Oswald', 'lato', 'arial', 'verdana';
+    background: whitesmoke;
+    width: 100%;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+h1 {
+    color: #1fa67b;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
